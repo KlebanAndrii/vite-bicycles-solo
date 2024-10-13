@@ -1,0 +1,161 @@
+@use "../../../../styles/mixins" as *;
+
+.feedback {
+  padding-block: 80px 60px;
+  // @include size("padding-top", 80, 35);
+  // @include size("padding-bottom", 60, 35);
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 300px 860px;
+    @include rmax($xl) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .content {
+    @include rmax($xl) {
+      margin-inline: auto;
+      text-align: center;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  .title {
+    margin-bottom: 35px;
+    @include rmax($xl) {
+      &::before {
+        margin-inline: auto;
+      }
+    }
+  }
+
+  .slider-actions {
+    display: flex;
+    gap: 12px;
+
+    @include rmax($xl) {
+      justify-content: center;
+      margin-inline: auto;
+    }
+  }
+
+  .slider-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: 2px solid transparent;
+    outline-offset: 0;
+    transition: 0.3s ease-in-out;
+
+    &::before {
+      content: "";
+      width: 10px;
+      height: 20px;
+      mask-image: var(--icon-prev);
+      
+      background-color: currentColor;
+      @include mask-contain;
+    }
+
+    &--next {
+      &::before {
+        transform: scaleX(-1);
+      }
+    }
+
+    &[disabled] {
+      color: var(--c-gray);
+      pointer-events: none;
+    }
+
+    &:focus {
+      outline-color: var(--c-pink);
+      outline-offset: 3px;
+    }
+
+    @include hover {
+      color: var(--c-pink);
+    }
+  }
+
+//   .slider {
+//     padding-block: 30px;
+//     overflow: hidden;
+  
+//   }
+
+//   .swiper-wrapper {
+//     box-sizing: border-box !important;
+//     padding: 16px;
+//   }
+
+//   .swiper-slide {
+//     box-sizing: border-box !important;
+//     width: fit-content !important;
+//   }
+// }
+
+
+.slider {
+  padding-block: 30px;
+  overflow-x: auto; // Додає горизонтальний скрол для того, щоб можна було гортати картки
+  display: flex;
+  gap: 16px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  gap: 16px;
+  padding: 16px;
+}
+
+.swiper-slide {
+  flex: 0 0 auto; // Забезпечує, щоб слайди не змінювали розміри
+}
+
+}
+
+.feedback-card {
+  // max-width: 100%;
+  height: 10rem;
+  padding: 45px;
+  box-shadow: 0px 0px 8px 8px rgba(0, 0, 0, 0.08);
+
+
+  &__body {
+    margin-bottom: 20px;
+  }
+
+    &__body p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3; // Встановлює кількість рядків
+    line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis; // Додає три крапки в кінці тексту
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__title {
+    font-weight: 500;
+  }
+
+  &__info {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--c-gray);
+  }
+}

@@ -1,0 +1,21 @@
+@use "./hero/hero";
+@use "./about/about";
+@use "./rental/rental";
+@use "./choose/choose";
+@use "./why/why";
+@use "./feedback/feedback";
+@use "./request/request";
+
+.home-page {
+  .header {
+    background-color: transparent;
+
+    .header-bottom {
+      padding-block: 15px 15px;
+    }
+
+    &.scrolled {
+      background-color: var(--c-dark);
+    }
+  }
+}
