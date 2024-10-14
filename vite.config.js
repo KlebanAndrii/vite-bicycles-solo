@@ -4,6 +4,9 @@ import postcss from '@vituum/vite-plugin-postcss';
 // import { copyFileSync } from 'fs';
 
 export default {
+
+  base: '/solo-bicycles-vite/',
+
   plugins: [
     vituum(),
     postcss(),
