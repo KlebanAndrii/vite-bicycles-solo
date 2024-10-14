@@ -5,7 +5,7 @@ import postcss from '@vituum/vite-plugin-postcss';
 
 export default {
 
-  // base: '/solo-bicycles-vite/',
+  base: '/solo-bicycles-vite/',
 
   plugins: [
     vituum(),
