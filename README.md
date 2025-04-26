@@ -4,6 +4,10 @@
 
 
 
+![BestBullsBicyclesGIF](https://github.com/user-attachments/assets/199e24be-b446-4a1c-b53a-42f2cfdd38ac)
+
+
+
 # Збірка Vite.js + vituum
 
 - Перед встановленням збірки перевірте, чи ви встановили node.js (LTS-версію)
